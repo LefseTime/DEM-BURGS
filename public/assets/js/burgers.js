@@ -20,25 +20,13 @@ $(function() {
       );
     });
   
-    $(".delete").on("click", function(event) {
-      var id = $(this).data("id");
-      $.ajax("/api/cats/" + id, {
-        type: "DELETE"
-      }).then(
-        function() {
-          console.log("deleted");
-          location.reload();
-        }
-      )
-    })
-  
     $(".create-form").on("submit", function(event) {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
       var newBurger = {
-        name: $("#ca").val().trim(),
-        devoured: $("[name=sleepy]:checked").val().trim()
+        name: $("#burger").val().trim(),
+        devoured: false
       };
   
       // Send the POST request.
