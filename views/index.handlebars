@@ -1,36 +1,38 @@
-<h1>Burgers</h1>
-
-<img src="../public/assets/img/nomCat.png"> {{!-- box to type in new burgers --}}
-
-<hr>
-
-<div>
-  <h2 class="add-burgers">Add a Burger</h2>
-  <form class="create-form add-burgers">
-
-    <div class="form-group">
-      <label for="ca">Burger Name:</label>
-      <input type="text" id="burger" name="name">
-    </div>
-
-    <button type="submit" id="submit">Add Burger</button>
-  </form>
+<div class="flex-container" id="head">
+  <img src="./assets/img/burger.png" id="burger-image">
+  <img src="./assets/img/nomCat.png" id="cat-image"> {{!-- box to type in new burgers --}}
 </div>
 
-<hr> {{!-- uneaten/eaten burgers; float right when eaten? button to eat inbetween --}}
-<div class="uneaten-burgers">
-  <h2>Burgers that have not yet been eaten!</h2>
+<h1 id="title">DEM BURGS</h1>
 
-
-  <ul>
-    {{#each burgers}} {{#unless devoured}} {{> burger-block devoured=false}} {{/unless}} {{/each}}
-  </ul>
+<div class="add-burgers">
+  <h2>Add a Burg</h2>
+  <div class="add-burgers-form">
+    <form class="create-form">
+      <div class="form-group">
+        <label for="ca">Burg Name:</label>
+        <input type="text" id="burger" name="name">
+        <button type="submit" id="submit">Add Burg</button>
+      </div>
+    </form>
+  </div>
 </div>
 
-<div class="eaten-burgers">
-  <h2>Burgers that have already been eaten and because of that fact are no longer available to be eaten!</h2>
+<div class="two-column">
+  <div class="uneaten-burgers">
+    <h2>Burgs that have yet to be eaten.</h2>
 
-  <ul>
-    {{#each burgers}} {{#if devoured}} {{> burger-block devoured=true}} {{/if}} {{/each}}
-  </ul>
+
+    <ul>
+      {{#each burgers}} {{#unless devoured}} {{> burger-block devoured=false}} {{/unless}} {{/each}}
+    </ul>
+  </div>
+
+  <div class="eaten-burgers">
+    <h2>Burgs that have already been eaten and due to that fact are no longer available to eat because that's how food works.</h2>
+
+    <ul>
+      {{#each burgers}} {{#if devoured}} {{> burger-block devoured=true}} {{/if}} {{/each}}
+    </ul>
+  </div>
 </div>
