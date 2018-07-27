@@ -25,13 +25,17 @@ li {
     justify-content: center;
     background-color: rgba(200, 115, 100, 0.7);
     width: 100%;
-    font-size: 5rem;
+    font-size: 5em;
     position: absolute;
     top: 10%;
 }
 
+#cat-image {
+    max-width: 60%;
+}
+
 h2{
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .add-burgers {
@@ -67,6 +71,13 @@ h2{
 
 #burger-image {
     max-width: 60%;
+}
+
+button{
+    background-color: rgba(200, 115, 100, 0.7);
+    font-family: 'Ranchers', cursive;
+    font-size: .8rem;
+    margin-top: .5em;
 }
 
 /* font-family: 'Ranchers', cursive;
